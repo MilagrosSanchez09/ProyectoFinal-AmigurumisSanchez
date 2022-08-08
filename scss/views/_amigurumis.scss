@@ -1,0 +1,68 @@
+/* Galería de Princesas y Príncipes */
+.container-gallery{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px 20px 0 20px;
+    .heading{
+        width: 50%;
+        h3{
+            font-size: 3em;
+            font-weight: bolder;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #222;
+            span{
+                font-weight: 100;
+            }
+        }
+    }
+    .box-photo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .dream{
+            display: flex;
+            flex-direction: column;
+            width: 32.5%;
+            img{
+                width: 100%;
+                padding: 15px;
+                border-radius: 5px;
+            }
+        }
+    }
+    .btn{
+        margin: 40px 0 70px 0;
+        background: #222;
+        padding: 15px 40px ;
+        border-radius: 5px;
+        a{
+            color: #fff;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: bolder;
+            letter-spacing: 3px;
+        }
+    }
+}
+
+@media only screen and (max-width: 769px){
+    .container-gallery .box-photo{
+   flex-direction: column;
+  }
+
+.container-gallery .box-photo .dream{
+  width: 100%;
+}
+}
+
+@media only screen and (max-width: 643px){
+.container-gallery .heading{
+  width: 100%;
+}
+.container-gallery .heading h3{
+  font-size: 1em; 
+}
+}

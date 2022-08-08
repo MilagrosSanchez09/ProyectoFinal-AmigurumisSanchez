@@ -1,0 +1,93 @@
+/*EXTEND*/
+
+.boton{
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    text-align: center;
+    color: black;
+    border-radius: 20px;
+    border: none;
+}
+
+.boton-successss{
+    @extend .boton;
+    background-color: pink;
+    color: yellow;
+    border-color: pink;
+}
+
+.boton-warningg{
+    @extend .boton;
+    background-color: rosybrown;
+    color: black;
+    border-color: blue;
+}
+
+/*---------------------------
+.boton .boton-success{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    text-align: center;
+    color: black;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+------------------------------*/
+/*MIXIN*/
+
+$font-family: 'Verdana';
+
+@mixin primary-button ($font-color, $background-color, $font-size){
+    background-color: $background-color;
+    color: $font-color;
+    font-size: $font-size;
+    font-family: $font-family;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+}
+
+.primary-button-celeste{
+    @include primary-button(white, #a4c2c6, 14px)
+}
+
+.primary-button-blue{
+    @include primary-button(white, blue, 16px)
+}
+
+.primary-button-yellow{
+    @include primary-button(black, yellow, 12px)
+}
+
+
+
+@mixin titulo-about{
+    color: #17a2b8;
+    font-size: 45px;
+    font-family: $font-family;
+
+}
+
+.titulo{
+    @include titulo-about
+}
+
+
+/*maps*/
+$tamaño: (
+    nostock:#a4c2c6,
+    sistock:#cfad94,
+    proximamente:#675088
+);
+
+@each $tamaños, $color in $tamaño {
+    .ct--#{$tamaños} {
+        background-color: $color;
+        font-family: $font-family;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+    }
+}
